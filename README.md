@@ -1,5 +1,19 @@
 # bellatrix-api
 
-Criar migrations
+## Comandos
 
-yarn typeorm migration:generate src/migrations/<name> -d src data-source.ts
+### Instalar dependências
+
+yarn
+
+### Criar migrations
+
+yarn migrate create "nome"
+
+### Rodar migrations
+
+yarn migrate up
+
+### Rodar servidor de desenvolvimento
+
+yarn dev
