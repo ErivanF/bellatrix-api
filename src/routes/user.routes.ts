@@ -1,11 +1,9 @@
-import { Router , Response} from "express";
+import { Router } from "express";
+import userCreateController from "../controllers/user/userCreate.controller";
 
 const routes = Router();
 
 export const userRoutes = ()=>{
-    routes.get("/hello",(req, res: Response)=>{
-        console.log("Teste");
-        return res.json({res:"Hello"});
-    })
+    routes.post("", userCreateController)
     return routes;
 }

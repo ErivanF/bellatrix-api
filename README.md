@@ -8,11 +8,11 @@ yarn
 
 ### Criar migrations
 
-yarn migrate create "nome"
+yarn db create **nome**
 
 ### Rodar migrations
 
-yarn migrate up
+yarn migrate
 
 ### Rodar servidor de desenvolvimento
 
