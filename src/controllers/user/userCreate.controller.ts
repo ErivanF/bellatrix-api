@@ -1,7 +1,11 @@
 import { Request, Response } from "express"
+import { IUserCreate } from "../../innterfaces/user"
+import createUserService from "../../services/user/userCreate.service"
 
-const userCreateController = async(req: Request, res: Response) => {
-    return res.send(req.body)
+const userCreateController = async (req: Request, res: Response) => {
+	const user = req.body as IUserCreate
+	const dbUser = await createUserService(user)
+	return res.status(201).send(dbUser)
 }
 
 export default userCreateController
