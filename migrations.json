@@ -6,8 +6,8 @@
   "migrationsDir": "src/migrations",
   "migrationsCollection": "migrations_changelog",
   "useEnv": true,
-  "environment":{
-    "uriVar":"MONGODB_URL",
+  "environment": {
+    "uriVar": "MONGODB_URL",
     "databaseVar": "MONGODB_DATABASE"
   }
 }

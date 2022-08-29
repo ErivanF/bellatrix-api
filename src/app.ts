@@ -9,11 +9,11 @@ app.use(express.json())
 appRoutes(app)
 app.listen(port)
 try {
-	const DBURI = process.env.MONGODB_URI as string
-	mongoose.connect(DBURI)
+  const DBURI = process.env.MONGODB_URI as string
+  mongoose.connect(DBURI)
 } catch (error) {
-	console.log("Deu ruim")
-	console.log(error)
+  console.log("Deu ruim")
+  console.log(error)
 }
 
 console.log(`Running on port ${port}`)
