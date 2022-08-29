@@ -54,10 +54,6 @@ Status: 201 Created
 
 Criar um módulo que realiza o tratamento de erros
 
-### Método de apresentção para os usuários
-
-Esse método retorna as infoemações do usuário sem o \_ na id e sem a senha, para ser uma resposta mais coerente
-
 ### Rota de login
 
 Criar rota de login, recebendo e-mail e senha e retornanro um token JWT
