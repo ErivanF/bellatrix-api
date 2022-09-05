@@ -50,10 +50,6 @@ Status: 201 Created
 
 ## To-do
 
-### Tratamento de erros
-
-Criar um módulo que realiza o tratamento de erros
-
 ### Rota de login
 
 Criar rota de login, recebendo e-mail e senha e retornanro um token JWT
