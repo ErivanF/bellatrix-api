@@ -5,6 +5,7 @@ import { Console } from "console"
 import { AppError } from "../../errors/AppError"
 
 const createUserService = async ({ name, password, email }: IUserCreate) => {
+  console.log(name)
   if (!name) throw new AppError(400, "Invalid name")
   if (!email) throw new AppError(400, "Invalid email")
   if (!password) throw new AppError(400, "Invalid password")

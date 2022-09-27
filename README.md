@@ -40,11 +40,9 @@ Status: 201 Created
 
 ```json
 {
-  "_id": "630caa263662b7fe2637d1af",
+  "id": "630caa263662b7fe2637d1af",
   "name": "Axl Rose",
-  "email": "guns@roses.com",
-  "password": "$2b$10$9kIunwIOTxlVL6yVrryr6OWZcGYO/GPUQfHdRyxyiUKhVl7iZkRyu",
-  "created_at": "2022-08-29T11:59:09.443Z"
+  "email": "guns@roses.com"
 }
 ```
 
