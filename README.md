@@ -54,7 +54,7 @@ Status: 201 Created
 
 Criar rota de login, recebendo e-mail e senha e retornanro um token JWT
 
-### Middleware paraverificar token
+### Middleware para verificar token
 
 Criar um middleware que receba o token do header da requisição e adicione informações de cadastro ao request
 

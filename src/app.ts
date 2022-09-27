@@ -2,12 +2,10 @@ import express from "express"
 import appRoutes from "./routes"
 import "dotenv/config"
 import mongoose from "mongoose"
-import { errorHandler } from "./error/AppError"
 const app = express()
 const port = parseInt(process.env.NODE_PORT || "5000")
 
 app.use(express.json())
-app.use(errorHandler)
 appRoutes(app)
 app.listen(port)
 try {
