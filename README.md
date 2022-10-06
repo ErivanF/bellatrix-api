@@ -50,7 +50,7 @@ Status: 201 Created
 
 ### Rota de login
 
-Criar rota de login, recebendo e-mail e senha e retornanro um token JWT
+Criar rota de login, recebendo e-mail e senha e retornando um token JWT
 
 ### Middleware para verificar token
 

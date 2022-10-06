@@ -1,15 +1,18 @@
-import { Request, Response } from "express"
-import { handleError } from "../../errors/AppError"
+import { NextFunction, Request, Response } from "express"
 import { IUserCreate } from "../../interfaces/user"
 import createUserService from "../../services/user/userCreate.service"
 
-const userCreateController = async (req: Request, res: Response) => {
+const userCreateController = async (
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
   try {
     const user = req.body as IUserCreate
     const dbUser = await createUserService(user)
     return res.status(201).send(dbUser)
   } catch (err) {
-    handleError(err, res)
+    next(err)
   }
 }
 

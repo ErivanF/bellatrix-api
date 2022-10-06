@@ -1,4 +1,4 @@
-import { Response } from "express"
+import { Request, Response, NextFunction } from "express"
 export class AppError extends Error {
   statusCode: number
   constructor(statusCode: number, message: string) {
@@ -6,7 +6,13 @@ export class AppError extends Error {
     this.statusCode = statusCode
   }
 }
-export const handleError = (error: any | AppError, res: Response) => {
+export const errorHandler = (
+  error: any | AppError,
+  req: Request,
+  res: Response,
+  next: NextFunction
+) => {
+  console.log("Teste")
   if (error instanceof AppError) {
     return res
       .status(error.statusCode)
