@@ -1,14 +1,12 @@
 import { IUserCreate } from "../../interfaces/user"
 import bcrypt from "bcrypt"
 import User from "../../models/user.model"
-import { Console } from "console"
-import { AppError } from "../../errors/AppError"
+import { BadRequestError } from "../../errors/HTTPError"
 
 const createUserService = async ({ name, password, email }: IUserCreate) => {
-  console.log(name)
-  if (!name) throw new AppError(400, "Invalid name")
-  if (!email) throw new AppError(400, "Invalid email")
-  if (!password) throw new AppError(400, "Invalid password")
+  if (!name) throw new BadRequestError("Invalid name")
+  if (!email) throw new BadRequestError("Invalid email")
+  if (!password) throw new BadRequestError("Invalid password")
   email = email.toLowerCase()
   const passwordHash = bcrypt.hash(password, 10)
   const newUser = new User({ name, email, password: await passwordHash })

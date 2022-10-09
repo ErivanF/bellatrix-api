@@ -12,12 +12,13 @@ export const errorHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  console.log("Teste")
   if (error instanceof AppError) {
     return res
       .status(error.statusCode)
       .json({ status: "Error", message: error.message })
   }
   console.log(error)
-  return res.status(500).json({ Teste: "Teste" })
+  return res
+    .status(500)
+    .json({ status: "Error", message: "Inernal server error" })
 }

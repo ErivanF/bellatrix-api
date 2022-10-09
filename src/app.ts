@@ -10,7 +10,6 @@ try {
   mongoose.connect(DBURI)
 } catch (error) {
   console.log("Deu ruim")
-  console.log(error)
 }
 app.use(express.json())
 appRoutes(app)
