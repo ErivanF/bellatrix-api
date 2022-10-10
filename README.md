@@ -46,11 +46,30 @@ Status: 201 Created
 }
 ```
 
+### Login
+
+Endpoint: /user POST
+
+Body:
+
+```json
+{
+  "email": "guns@roses.com",
+  "password": "MySweetChild"
+}
+```
+
+Response:
+
+Status: 200 OK
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Imd1bnNAcm9zZXMuY29tIiwiaWF0IjoxNjY1NDQyODAyLCJleHAiOjE2NjU1MjkyMDJ9.JxpA6Xmd0tEHP2VHpcNVQQBbp3iKc3X-njQGJcQ-zec"
+}
+```
+
 ## To-do
-
-### Rota de login
-
-Criar rota de login, recebendo e-mail e senha e retornando um token JWT
 
 ### Middleware para verificar token
 
