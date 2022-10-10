@@ -20,5 +20,5 @@ export const errorHandler = (
   console.log(error)
   return res
     .status(500)
-    .json({ status: "Error", message: "Inernal server error" })
+    .json({ status: "Error", message: "Internal server error" })
 }

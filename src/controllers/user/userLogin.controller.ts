@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from "express"
-import { BadRequestError } from "../../errors/HTTPError"
+import { BadRequestError } from "../../errors"
 import userLoginService from "../../services/user/userLogin.service"
-const userLoginController = (
+const userLoginController = async (
   req: Request,
   res: Response,
   next: NextFunction
@@ -12,8 +12,8 @@ const userLoginController = (
     }
     const email = String(req.body.email)
     const password = String(req.body.password)
-    const token = userLoginService(email, password)
-    return res.json({ email, password })
+    const token = await userLoginService(email, password)
+    return res.json(token)
   } catch (err) {
     return next(err)
   }

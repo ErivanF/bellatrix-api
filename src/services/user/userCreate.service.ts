@@ -1,7 +1,7 @@
 import { IUserCreate } from "../../interfaces/user"
 import bcrypt from "bcrypt"
 import User from "../../models/user.model"
-import { BadRequestError } from "../../errors/HTTPError"
+import { BadRequestError } from "../../errors"
 
 const createUserService = async ({ name, password, email }: IUserCreate) => {
   if (!name) throw new BadRequestError("Invalid name")

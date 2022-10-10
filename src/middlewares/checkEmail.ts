@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express"
-import { ConflictError } from "../errors/HTTPError"
+import { ConflictError } from "../errors"
 import checkEmailService from "../services/user/checkEmail.service"
 const checkEmailMiddleware = async (
   req: Request,
