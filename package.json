@@ -11,7 +11,8 @@
   },
   "compilerOptions": {
     "typeRoots": [
-      "./types"
+      "./@types",
+      "./node_modules/@types"
     ]
   },
   "devDependencies": {
