@@ -15,8 +15,8 @@ const checkAuthMiddleware = async (
     }
     const payload = verify(token, process.env.JWT_SECRET || "") as IToken
     const user = findUserService(payload.email)
+    console.log(await user)
     req.user = await user
-    return next()
   } catch (err) {
     return next(err)
   }

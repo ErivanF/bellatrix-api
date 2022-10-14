@@ -1,8 +1,9 @@
 import { IUser } from "../../src/interfaces/user"
+import * as express from "express"
 
 declare global {
-  declare namespace Express {
-    export interface Request {
+  namespace Express {
+    interface Request {
       user: IUser
     }
   }

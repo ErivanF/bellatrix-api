@@ -4,6 +4,6 @@ const userProfileController = (
   res: Response,
   next: NextFunction
 ) => {
-  return res.json("OK")
+  return res.json(req.user)
 }
 export default userProfileController

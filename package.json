@@ -9,12 +9,6 @@
     "db": "mongo-migrate",
     "migrate": "ts-node src/migration-config.ts up"
   },
-  "compilerOptions": {
-    "typeRoots": [
-      "./@types",
-      "./node_modules/@types"
-    ]
-  },
   "devDependencies": {
     "@types/bcrypt": "^5.0.0",
     "@types/express": "^4.17.13",
