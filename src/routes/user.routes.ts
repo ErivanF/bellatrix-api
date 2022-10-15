@@ -7,9 +7,11 @@ import checkEmailMiddleware from "../middlewares/checkEmail"
 
 const routes = Router()
 
-export const userRoutes = () => {
+const userRoutes = () => {
   routes.get("", checkAuthMiddleware, userProfileController)
   routes.post("", checkEmailMiddleware, userCreateController)
   routes.post("/login", userLoginController)
   return routes
 }
+
+export default userRoutes
