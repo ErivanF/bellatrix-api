@@ -69,17 +69,19 @@ Status: 200 OK
 }
 ```
 
+### Buscar revisões
+
+Endpoint: /review GET
+
+Response:
+
+Status: 200 OK
+
 ## To-do
 
 ### Criar rota para criar revisões
 
 /reviews POST
-
-### Criar rota que retorne as revisões
-
-/reviews GET
-
-Retorna todas as revisões do usuário
 
 ### Criar rota para modificar uma revisão
 
