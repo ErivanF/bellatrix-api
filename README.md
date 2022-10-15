@@ -71,18 +71,6 @@ Status: 200 OK
 
 ## To-do
 
-### Middleware para verificar token
-
-Criar um middleware que receba o token do header da requisição e adicione informações de cadastro ao request
-
-### Rota de perfil
-
-Criar rota que retorne as informações do usuário logado
-
-### Criar interface para revisões
-
-Interface deve incluir nome, descrição, momento de criação, um array numérico de dias para a próxima revisão, data da primeira revisão, uma data de criação e uma data de deleção
-
 ### Criar rota para criar revisões
 
 /reviews POST
