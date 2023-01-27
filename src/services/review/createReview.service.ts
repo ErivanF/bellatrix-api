@@ -3,7 +3,6 @@ import Review from "../../models/review.model"
 
 const createReviewService = (data: IReviewCreate) => {
   const newReview = new Review({ ...data })
-
   newReview.save()
   return newReview
 }

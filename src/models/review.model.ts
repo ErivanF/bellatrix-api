@@ -1,4 +1,4 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 const schema = new mongoose.Schema(
   {
@@ -7,12 +7,13 @@ const schema = new mongoose.Schema(
     text: { type: String },
     firstDate: { type: String, required: true },
     reviewDays: { type: [Number], default: [] },
+    reviewTimes: { type: Number, default: 0 },
     createdAt: { type: Date, required: true, default: Date.now },
     deletedAt: { type: Date },
   },
   { versionKey: false }
-)
+);
 
-const Review = mongoose.model("Review", schema, "Reviews")
+const Review = mongoose.model("Review", schema, "Reviews");
 
-export default Review
+export default Review;
