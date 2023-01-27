@@ -9,11 +9,11 @@ const schema = new mongoose.Schema(
     reviewDays: { type: [Number], default: [] },
     reviewTimes: { type: Number, default: 0 },
     createdAt: { type: Date, required: true, default: Date.now },
-    deletedAt: { type: Date },
+    deletedAt: { type: Date, default: null },
   },
   { versionKey: false }
 );
 
-const Review = mongoose.model("Review", schema, "Reviews");
+const Review = mongoose.model("Review", schema, "reviews");
 
 export default Review;
