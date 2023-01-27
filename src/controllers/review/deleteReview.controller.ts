@@ -9,7 +9,8 @@ const deleteReview = async (
 ) => {
   try {
     const id = req.params.id;
-    const sucess = await deleteReviewService(id);
+    const userId = String(req.user._id);
+    const sucess = await deleteReviewService(id, userId);
     if (sucess) {
       return res.status(204).send();
     } else {
