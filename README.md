@@ -6,14 +6,6 @@
 
 yarn
 
-### Criar migrations
-
-yarn db create **nome**
-
-### Rodar migrations
-
-yarn migrate
-
 ### Rodar servidor de desenvolvimento
 
 yarn dev
@@ -74,23 +66,101 @@ Status: 200 OK
 Endpoint: /review GET
 
 Response:
-
 Status: 200 OK
+Body:
 
-## To-do
+```json
+[
+  {
+    "_id": "677ec3ed1cf3102c400989bd",
+    "userId": "677e6e681cf3102c400989ae",
+    "title": "Title",
+    "text": "editedText",
+    "firstDate": "2025/01/08",
+    "reviewDays": [1, 1, 3, 5],
+    "reviewTimes": 0,
+    "deletedAt": null,
+    "createdAt": "2025-01-08T18:29:01.714Z"
+  },
+  {
+    "_id": "677ec44f1cf3102c400989c9",
+    "userId": "677e6e681cf3102c400989ae",
+    "title": "Title",
+    "text": "text",
+    "firstDate": "2025/01/08",
+    "reviewDays": [1, 1, 3, 5],
+    "reviewTimes": 0,
+    "deletedAt": null,
+    "createdAt": "2025-01-08T18:30:39.958Z"
+  }
+]
+```
 
-### Criar rota para criar revisões
+### Criar revisão
 
-/reviews POST
+Endpoint: /review POST
 
-### Criar rota para modificar uma revisão
+Body:
 
-/reviews/:id PATCH
+```json
+{
+  "title": "Title",
+  "text": "text",
+  "reviewDays": [1, 1, 3, 5],
+  "firstDate": "2025/01/08",
+  "reviewTimes": 0
+}
+```
 
-Permite alterar as informações de uma revisão
+Response:
+Status: 201 Created
+Body:
 
-### Criar rota para exluir uma revisão
+```json
+{
+  "userId": "677e6e681cf3102c400989ae",
+  "title": "Title",
+  "text": "text",
+  "firstDate": "2025/01/08",
+  "reviewDays": [1, 1, 3, 5],
+  "reviewTimes": 0,
+  "deletedAt": null,
+  "_id": "677ec44f1cf3102c400989c9",
+  "createdAt": "2025-01-08T18:30:39.958Z"
+}
+```
+
+### Modificar uma revisão
+
+Endpoint: /reviews/:id PATCH
+
+Body:
+
+{
+"text":"editedText"
+}
+
+Response:
+Status: 200 OK
+Body:
+
+```json
+{
+  "userId": "677e6e681cf3102c400989ae",
+  "title": "Title",
+  "text": "editedText",
+  "firstDate": "2025/01/08",
+  "reviewDays": [1, 1, 3, 5],
+  "reviewTimes": 0,
+  "deletedAt": null,
+  "_id": "677ec44f1cf3102c400989c9",
+  "createdAt": "2025-01-08T18:30:39.958Z"
+}
+```
+
+### Exluir uma revisão
 
 /reviews/:id DELETE
 
-Será um soft delete, permitindo que o usuário recupere as revisões deletadas, em um versão futura
+Response:
+Status: 204 No Content

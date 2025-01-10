@@ -1,10 +1,10 @@
-import { Request, Response, NextFunction } from "express"
-import { JsonWebTokenError } from "jsonwebtoken"
+import { Request, Response, NextFunction } from "express";
+import { JsonWebTokenError } from "jsonwebtoken";
 export class AppError extends Error {
-  statusCode: number
+  statusCode: number;
   constructor(statusCode: number, message: string) {
-    super(message)
-    this.statusCode = statusCode
+    super(message);
+    this.statusCode = statusCode;
   }
 }
 export const errorHandler = (
@@ -16,13 +16,13 @@ export const errorHandler = (
   if (error instanceof AppError) {
     return res
       .status(error.statusCode)
-      .json({ status: "Error", message: error.message })
+      .json({ status: "Error", message: error.message });
   }
   if (error instanceof JsonWebTokenError) {
-    return res.status(401).json({ status: "Error", message: "Invalid token" })
+    return res.status(401).json({ status: "Error", message: "Invalid token" });
   }
-  console.log(error)
+  console.log(error);
   return res
     .status(500)
-    .json({ status: "Error", message: "Internal server error" })
-}
+    .json({ status: "Error", message: "Internal server error" });
+};

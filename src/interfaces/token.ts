@@ -1,3 +1,3 @@
 export interface IToken {
-  email: string
+  email: string;
 }

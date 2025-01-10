@@ -1,8 +1,7 @@
-import { mongoMigrateCli } from "mongo-migrate-ts"
-import "dotenv/config"
+import { mongoMigrateCli } from "mongo-migrate-ts";
+import "dotenv/config";
 mongoMigrateCli({
-  uri: process.env.MONGODB_URL || "mongodb://localhost:27017",
-  database: process.env.MONGODB_DATABASE,
+  uri: process.env.MONGODB_URL,
   migrationsDir: "src/migrations",
   migrationsCollection: "migrations_collection",
-})
+});
